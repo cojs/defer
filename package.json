@@ -22,7 +22,7 @@
     "mocha": "*",
     "should": "*"
   },
-  "peerDepencies": {
+  "peerDependencies": {
     "co": ">= 3.0.1"
   },
   "scripts": {
