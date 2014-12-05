@@ -30,7 +30,7 @@ I think you get it.
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Jonathan Ong me@jongleberry.com
+Copyright (c) 2013 - 2014 Jonathan Ong me@jongleberry.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
