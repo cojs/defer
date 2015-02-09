@@ -18,17 +18,17 @@
     "url": "https://github.com/cojs/defer/issues"
   },
   "devDependencies": {
-    "co": "~3.1.0",
+    "co": "4",
     "mocha": "*",
     "should": "*"
   },
   "peerDependencies": {
-    "co": "~3.1.0"
+    "co": "4"
   },
   "scripts": {
     "test": "make test;"
   },
   "engines": {
-    "node": ">= 0.11.9"
+    "node": ">= 0.11.14"
   }
 }

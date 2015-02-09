@@ -5,22 +5,31 @@ exports.defer =
 exports.immediate =
 exports.setImmediate = deferImmediate
 
+function createCallback(ctx, gen, cb) {
+  return function () {
+    cb = cb || error
+    co.call(ctx, gen).then(function () {
+      cb()
+    }, cb)
+  }
+}
+
 function deferImmediate(gen, cb) {
-  return setImmediate(co(gen).bind(this, cb || error))
+  return setImmediate(createCallback(this, gen, cb))
 }
 
 exports.nextTick = function deferNextTick(gen, cb) {
-  return process.nextTick(co(gen).bind(this, cb || error))
+  return process.nextTick(createCallback(this, gen, cb))
 }
 
 exports.timeout =
 exports.setTimeout = function deferTimeout(gen, timeout, cb) {
-  return setTimeout(co(gen).bind(this, cb || error), timeout)
+  return setTimeout(createCallback(this, gen, cb), timeout)
 }
 
 exports.interval =
 exports.setInterval = function deferInterval(gen, timeout, cb) {
-  return setInterval(co(gen).bind(this, cb || error), timeout)
+  return setInterval(createCallback(this, gen, cb), timeout)
 }
 
 function error(err) {
